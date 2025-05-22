@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ProjectAndoid</string>
+    <string name="see_all">See all</string>
+    <string name="recommended">Recommended</string>
+    <string name="popular_destination">Popular Destination</string>
+    <string name="search">Search</string>
+    <string name="address_city">Address, City...</string>
+    <string name="location">Location</string>
+    <string name="upcoming_trip">Upcoming Trip</string>
+    <string name="show_the_ticket_to_your_guide_before_departure">Show the ticket to your guide before departure</string>
+    <string name="tour_guide">Tour Guide</string>
+    <string name="textview">TextView</string>
+    <string name="Time">Time</string>
+    <string name="tip_duration">Tip Duration</string>
+    <string name="total_guest">Total Guest</string>
+    <string name="title">Title</string>
+    <string name="download_ticket">Download Ticket</string>
+</resources>
