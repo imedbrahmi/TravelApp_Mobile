@@ -1,0 +1,174 @@
+FONCTIONNALITÉS DU PROJET ANDROID DE RÉSERVATION DE VOYAGES
+=====================================================
+
+1. FONCTIONNALITÉS PRINCIPALES
+-----------------------------
+
+1.1. Écran d'accueil (MainActivity)
+    - Affichage des destinations populaires
+    - Interface utilisateur moderne avec des cartes
+    - Navigation fluide entre les écrans
+    - Barre de navigation en bas de l'écran
+    - Système de recherche intégré
+
+1.2. Détails du voyage (DetailActivity)
+    - Affichage complet des informations du voyage
+    - Galerie d'images du voyage
+    - Prix par personne
+    - Description détaillée
+    - Informations sur la durée
+    - Adresse et localisation
+    - Système de notation
+    - Bouton "Add to Cart" pour réserver
+
+1.3. Système de réservation (TicketActivity)
+    - Génération de ticket PDF
+    - Affichage des détails de la réservation
+    - Code QR/Barre pour validation
+    - Informations sur le guide touristique
+    - Date et heure du voyage
+    - Nombre de participants
+
+2. FONCTIONNALITÉS DE COMMUNICATION
+---------------------------------
+
+2.1. Communication avec le guide
+    - Appel téléphonique direct
+    - Envoi de SMS
+    - Affichage des informations de contact
+    - Photo de profil du guide
+
+2.2. Système de notifications
+    - Confirmation de réservation
+    - Rappels avant le voyage
+    - Mises à jour importantes
+
+3. GESTION DES DOCUMENTS
+-----------------------
+
+3.1. Génération de PDF
+    - Création automatique de tickets
+    - Mise en page professionnelle
+    - Inclusion de tous les détails du voyage
+    - Code QR/Barre pour validation
+    - Horodatage des tickets
+
+3.2. Stockage des documents
+    - Sauvegarde automatique des tickets
+    - Accès hors ligne aux documents
+    - Organisation des fichiers par date
+
+4. FONCTIONNALITÉS TECHNIQUES
+----------------------------
+
+4.1. Gestion des données
+    - Utilisation de Firebase Database
+    - Synchronisation en temps réel
+    - Stockage local pour accès hors ligne
+    - Gestion des permissions
+
+4.2. Interface utilisateur
+    - Design Material Design
+    - Animations fluides
+    - Support multilingue
+    - Thème sombre/clair
+
+4.3. Sécurité
+    - Gestion des permissions Android
+    - Protection des données utilisateur
+    - Validation des entrées
+    - Sécurisation des communications
+
+5. FONCTIONNALITÉS DE NAVIGATION
+-------------------------------
+
+5.1. Navigation principale
+    - Barre de navigation en bas
+    - Transitions fluides entre écrans
+    - Gestion du retour arrière
+    - État de navigation préservé
+
+5.2. Recherche et filtrage
+    - Recherche par mot-clé
+    - Filtrage par catégorie
+    - Tri des résultats
+    - Suggestions de recherche
+
+6. FONCTIONNALITÉS DE RÉSERVATION
+-------------------------------
+
+6.1. Processus de réservation
+    - Sélection des dates
+    - Choix du nombre de participants
+    - Calcul automatique du prix
+    - Confirmation de réservation
+
+6.2. Gestion des paiements
+    - Affichage du prix total
+    - Détails de la facturation
+    - Options de paiement
+    - Reçus de transaction
+
+7. FONCTIONNALITÉS DE PROFIL
+---------------------------
+
+7.1. Gestion du compte
+    - Informations personnelles
+    - Historique des réservations
+    - Préférences utilisateur
+    - Paramètres de notification
+
+7.2. Personnalisation
+    - Thème de l'application
+    - Langue préférée
+    - Unités de mesure
+    - Notifications personnalisées
+
+8. FONCTIONNALITÉS DE SUPPORT
+---------------------------
+
+8.1. Aide et support
+    - FAQ intégrée
+    - Contact support
+    - Guide d'utilisation
+    - Rapports de problèmes
+
+8.2. Mises à jour
+    - Notifications de mise à jour
+    - Journal des modifications
+    - Nouvelles fonctionnalités
+    - Corrections de bugs
+
+9. FONCTIONNALITÉS DE PARTAGE
+---------------------------
+
+9.1. Partage social
+    - Partage sur les réseaux sociaux
+    - Invitation d'amis
+    - Recommandations
+    - Avis et commentaires
+
+9.2. Export de données
+    - Partage de tickets
+    - Export d'historique
+    - Sauvegarde des préférences
+    - Transfert de données
+
+10. FONCTIONNALITÉS DE GÉOLOCALISATION
+-----------------------------------
+
+10.1. Services de localisation
+    - Détection de position
+    - Calcul d'itinéraires
+    - Points d'intérêt à proximité
+    - Carte interactive
+
+10.2. Informations contextuelles
+    - Météo locale
+    - Événements à proximité
+    - Horaires d'ouverture
+    - Informations touristiques
+
+Note: Ce document liste toutes les fonctionnalités implémentées dans le projet. 
+Certaines fonctionnalités peuvent nécessiter des permissions spécifiques 
+ou des configurations particulières pour fonctionner correctement. 

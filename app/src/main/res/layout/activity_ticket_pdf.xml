@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:layout_margin="24dp">
+
+        <TextView
+            android:id="@+id/pdfTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TICKET DE RÉSERVATION"
+            android:textColor="#800080"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/pdfTripTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titre du voyage : ..."
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:id="@+id/pdfDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Durée : ..."
+            android:textSize="15sp"
+            android:paddingTop="4dp"/>
+
+        <TextView
+            android:id="@+id/pdfGuide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guide touristique : ..."
+            android:textSize="15sp"
+            android:paddingTop="4dp"/>
+
+        <TextView
+            android:id="@+id/pdfTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Heure de départ : ..."
+            android:textSize="15sp"
+            android:paddingTop="4dp"/>
+
+        <TextView
+            android:id="@+id/pdfPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prix : ..."
+            android:textSize="15sp"
+            android:paddingTop="4dp"/>
+
+        <TextView
+            android:id="@+id/pdfAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adresse : ..."
+            android:textSize="15sp"
+            android:paddingTop="4dp"/>
+
+        <TextView
+            android:id="@+id/pdfFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Merci de votre réservation !\nPrésentez ce ticket à votre guide avant le départ."
+            android:textSize="13sp"
+            android:gravity="center"
+            android:paddingTop="24dp"
+            android:textColor="#666"/>
+
+        <TextView
+            android:id="@+id/pdfDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Généré le : ..."
+            android:textSize="11sp"
+            android:gravity="end"
+            android:paddingTop="8dp"
+            android:textColor="#888"/>
+    </LinearLayout>
+</ScrollView> 

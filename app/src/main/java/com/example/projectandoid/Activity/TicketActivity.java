@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,17 +44,12 @@ public class TicketActivity extends AppCompatActivity {
                 .load(object.getTourGuidePic())
                 .into(binding.profile);
 
-
-
         binding.backBtn.setOnClickListener(v -> finish());
 
         binding.titleTxt.setText(object.getTitle());
         binding.durationTxt.setText(object.getDuration());
         binding.tourGuideNameTxt.setText(object.getTourGuideName());
         binding.timeTxt.setText(object.getTimeTour());
-
-        // Remplacer ceci si tu as une TextView dédiée à la date
-        binding.tourGuideNameTxt.setText(object.getDateTour()); // Assure-toi d’avoir un champ "dateTxt"
 
         // Bouton d'envoi SMS
         binding.messageBtn.setOnClickListener(v -> {
@@ -65,6 +63,26 @@ public class TicketActivity extends AppCompatActivity {
         binding.callBtn.setOnClickListener(view -> {
             String phone = object.getTourGuidePhone();
             Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+            startActivity(intent);
+        });
+
+        // Bouton de téléchargement du ticket
+        binding.button2.setOnClickListener(v -> {
+            Intent intent = new Intent(TicketActivity.this, PdfActivity.class);
+            
+            // Obtenir la date actuelle
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
+            String currentDate = sdf.format(new Date());
+            
+            // Passer toutes les données nécessaires
+            intent.putExtra("title", object.getTitle());
+            intent.putExtra("duration", object.getDuration());
+            intent.putExtra("guide", object.getTourGuideName());
+            intent.putExtra("time", object.getTimeTour());
+            intent.putExtra("price", "$" + object.getPrice());
+            intent.putExtra("address", object.getAddress());
+            intent.putExtra("date", currentDate);
+            
             startActivity(intent);
         });
     }
