@@ -38,7 +38,7 @@ public class DetailActivity extends AppCompatActivity {
     // Initialise l'affichage avec les données de l'item
     private void setVariable() {
         binding.titleTxt.setText(object.getTitle());
-        binding.priceTxt.setText("$"+object.getPrice());
+        binding.priceTxt.setText("TND"+object.getPrice());
         binding.backBtn.setOnClickListener(v->finish());
         binding.bedTxt.setText(""+object.getBed());
         binding.durationTxt.setText(object.getDuration());

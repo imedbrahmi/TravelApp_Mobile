@@ -84,7 +84,7 @@ public class TicketActivity extends AppCompatActivity {
             intent.putExtra("duration", object.getDuration());
             intent.putExtra("guide", object.getTourGuideName());
             intent.putExtra("time", object.getTimeTour());
-            intent.putExtra("price", "$" + object.getPrice());
+            intent.putExtra("price", "TND" + object.getPrice());
             intent.putExtra("address", object.getAddress());
             intent.putExtra("date", currentDate);
             intent.putExtra("datetour", object.getDateTour());
