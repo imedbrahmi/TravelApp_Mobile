@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projectandoid.R;
 
+// Activity qui affiche le ticket PDF avec les informations de réservation
 public class PdfActivity extends AppCompatActivity {
+    // Méthode appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,7 @@ public class PdfActivity extends AppCompatActivity {
         String address = getIntent().getStringExtra("address");
         String date = getIntent().getStringExtra("date");
 
-        // Remplir le layout
+        // Remplir le layout avec les informations reçues
         ((TextView)findViewById(R.id.pdfTripTitle)).setText("Titre du voyage : " + title);
         ((TextView)findViewById(R.id.pdfDuration)).setText("Durée : " + duration);
         ((TextView)findViewById(R.id.pdfGuide)).setText("Guide touristique : " + guide);

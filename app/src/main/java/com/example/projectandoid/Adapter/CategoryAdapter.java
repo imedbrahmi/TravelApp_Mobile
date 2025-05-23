@@ -15,30 +15,31 @@ import com.example.projectandoid.databinding.ViewholderCategoryBinding;
 
 import java.util.List;
 
+// Adaptateur pour afficher la liste des catégories dans un RecyclerView
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewholder> {
     private final List<Category> items;
     private int selectedPosition = -1;
     private int lastSelectedPosition =-1;
     private Context context;
 
-
+    // Constructeur de l'adaptateur
     public CategoryAdapter(List<Category> items) {
         this.items = items;
     }
 
+    // Crée un nouveau ViewHolder pour chaque catégorie
     @NonNull
     @Override
     public CategoryAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context=parent.getContext();
         ViewholderCategoryBinding binding =
                 ViewholderCategoryBinding.inflate(LayoutInflater.from(context),parent,false);
-
         return new Viewholder(binding);
     }
 
+    // Lie les données de la catégorie à la vue
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.Viewholder holder, int position) {
-
         Category item=items.get(position);
         holder.binding.titleTxt.setText(item.getName());
         Glide.with(holder.itemView.getContext())
@@ -52,7 +53,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
                 selectedPosition = position;
                 notifyItemChanged(lastSelectedPosition);
                 notifyItemChanged(selectedPosition);
-
             }
         });
         holder.binding.titleTxt.setTextColor(context.getResources().getColor(R.color.white));
@@ -60,21 +60,20 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Viewho
             holder.binding.pic.setBackgroundResource(0);
             holder.binding.mainLayout.setBackgroundResource(R.drawable.purple_bg);
             holder.binding.titleTxt.setVisibility(View.VISIBLE);
-
-
         }else{
             holder.binding.pic.setBackgroundResource(R.drawable.grey_bg);
             holder.binding.mainLayout.setBackgroundResource(R.drawable.purple_bg);
             holder.binding.titleTxt.setVisibility(View.GONE);
         }
-
     }
 
+    // Retourne le nombre total de catégories
     @Override
     public int getItemCount() {
         return items.size();
     }
 
+    // ViewHolder pour chaque catégorie
     public class Viewholder extends RecyclerView.ViewHolder {
         private final ViewholderCategoryBinding binding;
         public Viewholder(ViewholderCategoryBinding binding) {

@@ -33,9 +33,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+// Activity principale qui affiche la page d'accueil de l'application
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private FirebaseDatabase database;
+
+    // Méthode appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,16 +47,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         database=FirebaseDatabase.getInstance();
 
+        // Initialisation des différentes sections de la page d'accueil
         initLocation();
-
         initBanners();
         initCategory();
         initPopular();
         initRecommended();
-
     }
 
-
+    // Initialise la section des destinations recommandées
     private void initRecommended() {
         DatabaseReference myref=database.getReference("Item");
         ArrayList<Item> list =new ArrayList<>();
@@ -71,20 +73,14 @@ public class MainActivity extends AppCompatActivity {
                         binding.recyclerViewRecommended.setAdapter(adapter);
                     }
                     binding.progressBarRecommended.setVisibility(View.GONE);
-
-
                 }
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
-
     }
 
-
+    // Initialise la section des destinations populaires
     private void initPopular() {
         DatabaseReference myref=database.getReference("Popular");
         ArrayList<Item> list =new ArrayList<>();
@@ -102,21 +98,14 @@ public class MainActivity extends AppCompatActivity {
                         binding.recyclerViewPopular.setAdapter(adapter);
                     }
                     binding.progressBarPopular.setVisibility(View.GONE);
-
-
                 }
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
-
     }
 
-
-
+    // Initialise la section des catégories
     private void initCategory() {
         DatabaseReference myref=database.getReference("Category");
         ArrayList<Category> list =new ArrayList<>();
@@ -134,22 +123,14 @@ public class MainActivity extends AppCompatActivity {
                   binding.recyclerViewCategory.setAdapter(adapter);
                 }
                 binding.progressBarCategory.setVisibility(View.GONE);
-
-
                 }
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
-
     }
 
-
-
-
+    // Initialise la liste des localisations
     private void initLocation() {
         DatabaseReference myref=database.getReference("Location");
         ArrayList<Location> list =new ArrayList<>();
@@ -160,23 +141,18 @@ public class MainActivity extends AppCompatActivity {
                     for(DataSnapshot issuee:snapshot.getChildren()){
                         list.add(issuee.getValue(Location.class));
                     }
-
                     ArrayAdapter<Location> adapter=new ArrayAdapter<>(MainActivity.this,
                             R.layout.sp_item, list );
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     binding.locationSp.setAdapter(adapter);
-
                 }
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
-
     }
 
+    // Configure le ViewPager2 pour afficher les bannières
     private void banners(ArrayList<SliderItems> items){
         binding.viewPager2.setAdapter(new SliderAdapter(items, binding.viewPager2));
         binding.viewPager2.setClipToPadding(false);
@@ -188,11 +164,11 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPager2.setPageTransformer(compositePageTransformer);
     }
 
+    // Initialise la section des bannières
     private void initBanners(){
         DatabaseReference myRef = database.getReference("Banner");
         binding.progressBarBanner.setVisibility(View.VISIBLE);
         ArrayList<SliderItems> items = new ArrayList<>();
-
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -204,11 +180,8 @@ public class MainActivity extends AppCompatActivity {
                     binding.progressBarBanner.setVisibility(View.GONE);
                 }
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
     }
 }

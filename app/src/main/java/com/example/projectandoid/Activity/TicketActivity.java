@@ -15,10 +15,12 @@ import com.bumptech.glide.Glide;
 import com.example.projectandoid.Domain.Item;
 import com.example.projectandoid.databinding.ActivityTicketBinding;
 
+// Activity qui affiche le ticket de réservation et permet d'interagir avec le guide
 public class TicketActivity extends AppCompatActivity {
     ActivityTicketBinding binding;
     private Item object;
 
+    // Méthode appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +28,17 @@ public class TicketActivity extends AppCompatActivity {
         binding = ActivityTicketBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Récupère les données de l'intent et initialise l'affichage
         getIntentExtra();
         setVariable();
     }
 
+    // Récupère l'objet passé par l'intent
     private void getIntentExtra() {
         object = (Item) getIntent().getSerializableExtra("object");
     }
 
+    // Initialise l'affichage avec les données de l'item et configure les actions
     private void setVariable() {
         // Chargement de l'image principale
         Glide.with(this)
@@ -45,7 +50,6 @@ public class TicketActivity extends AppCompatActivity {
                 .into(binding.profile);
 
         binding.backBtn.setOnClickListener(v -> finish());
-
         binding.titleTxt.setText(object.getTitle());
         binding.durationTxt.setText(object.getDuration());
         binding.tourGuideNameTxt.setText(object.getTourGuideName());

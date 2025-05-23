@@ -16,12 +16,13 @@ import com.example.projectandoid.Domain.Item;
 import com.example.projectandoid.R;
 import com.example.projectandoid.databinding.ActivityDetailBinding;
 
+// Activity qui affiche les détails d'une destination touristique
 public class DetailActivity extends AppCompatActivity {
 
     ActivityDetailBinding binding;
     private Item object;
 
-
+    // Méthode appelée à la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +30,12 @@ public class DetailActivity extends AppCompatActivity {
         binding=ActivityDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Récupère les données de l'intent et initialise l'affichage
         getIntentExtra();
         setVariable();
-
-
     }
 
+    // Initialise l'affichage avec les données de l'item
     private void setVariable() {
         binding.titleTxt.setText(object.getTitle());
         binding.priceTxt.setText("$"+object.getPrice());
@@ -51,6 +52,7 @@ public class DetailActivity extends AppCompatActivity {
                 .load(object.getPic())
                 .into(binding.pic);
 
+        // Action du bouton pour réserver/acheter
         binding.addToCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,10 +61,9 @@ public class DetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
+    // Récupère l'objet passé par l'intent
     private void getIntentExtra() {
         object=(Item) getIntent().getSerializableExtra("object");
     }

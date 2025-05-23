@@ -16,10 +16,15 @@ import com.example.projectandoid.R;
 
 import java.util.ArrayList;
 
+// Adaptateur pour le slider d'images
 public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderViewholder> {
+    // Liste des éléments du slider
     private ArrayList<SliderItems> sliderItems;
+    // Composant ViewPager2 pour le défilement
     private ViewPager2 viewPager2;
+    // Contexte de l'application
     private Context context;
+    // Runnable pour le slider infini (non recommandé pour les sliders simples)
     private Runnable runnable=new Runnable() {
         @Override
         public void run() {
@@ -28,11 +33,13 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
         }
     };
 
+    // Constructeur de l'adaptateur
     public SliderAdapter(ArrayList<SliderItems> sliderItems, ViewPager2 viewPager2) {
         this.sliderItems = sliderItems;
         this.viewPager2 = viewPager2;
     }
 
+    // Crée un nouveau ViewHolder pour chaque item du slider
     @NonNull
     @Override
     public SliderAdapter.SliderViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,20 +48,22 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
                 (R.layout.slider_item_container, parent, false));
     }
 
+    // Lie les données à la vue du slider
     @Override
     public void onBindViewHolder(@NonNull SliderAdapter.SliderViewholder holder, int position) {
-    holder.setImage(sliderItems.get(position));
-    if (position==sliderItems.size() - 2){
-        viewPager2.post(runnable);
-
+        holder.setImage(sliderItems.get(position));
+        if (position==sliderItems.size() - 2){
+            viewPager2.post(runnable);
+        }
     }
-    }
 
+    // Retourne le nombre total d'éléments
     @Override
     public int getItemCount() {
         return sliderItems.size() ;
     }
 
+    // ViewHolder pour chaque image du slider
     public class SliderViewholder extends RecyclerView.ViewHolder {
         private ImageView imageView;
 
@@ -63,6 +72,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
             imageView=itemView.findViewById(R.id.imageSlider);
         }
 
+        // Charge l'image dans l'ImageView
         void setImage(SliderItems sliderItems){
             Glide.with(context)
                     .load(sliderItems.getUrl())
@@ -70,3 +80,5 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
         }
     }
 }
+
+/****/
