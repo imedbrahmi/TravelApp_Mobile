@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textAlignment="center"
-        android:text="Lorem Ipsum is simply dummy text of the the \nsccsc dsvdvr vdsvbvdvevvx test "
+        android:text="Let us guide you through breathtaking landscapes and authentic cultures. "
         android:textColor="@color/darkBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

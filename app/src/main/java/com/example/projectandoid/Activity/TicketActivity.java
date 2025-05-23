@@ -52,6 +52,7 @@ public class TicketActivity extends AppCompatActivity {
         binding.backBtn.setOnClickListener(v -> finish());
         binding.titleTxt.setText(object.getTitle());
         binding.durationTxt.setText(object.getDuration());
+        binding.timeTxttourGuideTxt.setText(object.getDateTour());
         binding.tourGuideNameTxt.setText(object.getTourGuideName());
         binding.timeTxt.setText(object.getTimeTour());
 
@@ -86,6 +87,8 @@ public class TicketActivity extends AppCompatActivity {
             intent.putExtra("price", "$" + object.getPrice());
             intent.putExtra("address", object.getAddress());
             intent.putExtra("date", currentDate);
+            intent.putExtra("datetour", object.getDateTour());
+
             
             startActivity(intent);
         });

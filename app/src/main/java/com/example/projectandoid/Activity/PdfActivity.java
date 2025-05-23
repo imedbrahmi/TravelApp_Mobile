@@ -19,6 +19,7 @@ public class PdfActivity extends AppCompatActivity {
         String title = getIntent().getStringExtra("title");
         String duration = getIntent().getStringExtra("duration");
         String guide = getIntent().getStringExtra("guide");
+        String datetour = getIntent().getStringExtra("datetour");
         String time = getIntent().getStringExtra("time");
         String price = getIntent().getStringExtra("price");
         String address = getIntent().getStringExtra("address");
@@ -28,6 +29,7 @@ public class PdfActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.pdfTripTitle)).setText("Titre du voyage : " + title);
         ((TextView)findViewById(R.id.pdfDuration)).setText("Durée : " + duration);
         ((TextView)findViewById(R.id.pdfGuide)).setText("Guide touristique : " + guide);
+        ((TextView)findViewById(R.id.pdfDateDepart)).setText("Guide Date de départ:" + datetour);
         ((TextView)findViewById(R.id.pdfTime)).setText("Heure de départ : " + time);
         ((TextView)findViewById(R.id.pdfPrice)).setText("Prix : " + price);
         ((TextView)findViewById(R.id.pdfAddress)).setText("Adresse : " + address);

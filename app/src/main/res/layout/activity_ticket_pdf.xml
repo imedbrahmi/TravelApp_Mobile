@@ -50,12 +50,20 @@
             android:paddingTop="4dp"/>
 
         <TextView
+            android:id="@+id/pdfDateDepart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:text="Date de départ : ..."
+            android:textSize="15sp" />
+
+        <TextView
             android:id="@+id/pdfTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="4dp"
             android:text="Heure de départ : ..."
-            android:textSize="15sp"
-            android:paddingTop="4dp"/>
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/pdfPrice"
